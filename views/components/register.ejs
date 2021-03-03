@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="../stylesheets/loginRegister.css">
+
+<div class="container">
+<form action="/register" method='POST'>
+  
+      <h1>Register</h1>
+      <p  class='message'> <%= message%>  </p>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter your name" name="username" id="username" required>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" id="psw" required>
+  
+      
+  
+      <button type="submit" class="registerbtn">Register</button>
+    </form>
+    </div>
+
+    
+    <div class="container signin">
+      <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
+  
+  

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
-const { use } = require('../routes')
+const { use } = require('../routes/IndexRouter')
 
-const Salt = 11
+const Salt = 10
 
 const userSchema = mongoose.Schema({
     username:{
@@ -30,10 +30,11 @@ userSchema.pre('save', async function SavePass(next){
   const  user = this
   try {
     if(!user.isModified('password')) next()
-    bcrypt.hash(user.password, Salt).then(res=> {
-        user.password= hash
+    let hash = await bcrypt.hash(user.password, Salt)
+    
+    user.password= hash
         next();
-    })
+    
        
    
   } catch(err) { 
